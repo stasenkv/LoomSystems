@@ -1,7 +1,6 @@
 package investigator;
 
 import java.io.*;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -14,7 +13,7 @@ public class Investigator {
     private Map<String, List<SingleWord>> mapOfPatterns = new HashMap<>();
     private static SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
-    public void singleWordPatternCheck(String inputFileName, String outputFileName){
+    public void singleWordPatternCheck(String inputFileName, String outputFileName) throws IOException {
         /*General idea - build from each sentence a patterns by cutting every word (and replacing the word to $$$)
         For example. Sentence -  Moshe loves his mother. The patterns:
         $$$ loves his mother
@@ -44,6 +43,7 @@ public class Investigator {
             }
         } catch (IOException e){
             System.out.println("Exception while reading the file " + e);
+            throw e;
         }
         saveToFile(outputFileName);
     }
@@ -107,7 +107,7 @@ public class Investigator {
         return dateInString;
     }
 
-    private void saveToFile(String outputFileName) {
+    private void saveToFile(String outputFileName) throws IOException {
         StringBuilder sb = new StringBuilder();
         //save to file
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(outputFileName))) {
@@ -129,6 +129,7 @@ public class Investigator {
             }
         } catch (IOException e) {
             System.out.println("Exception while writing to file " + e);
+            throw e;
         }
     }
 }

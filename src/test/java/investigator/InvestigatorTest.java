@@ -35,7 +35,7 @@ public class InvestigatorTest {
     }
 
     @Test
-    public void testSingleWordPatternCheck(){
+    public void testSingleWordPatternCheck() throws IOException{
         Investigator investigator = new Investigator();
         File inputFile = new File(INPUT_FILE);
         File outputFile = new File(OUTPUT_FILE);
