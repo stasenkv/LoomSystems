@@ -12,6 +12,7 @@ import java.util.*;
 public class Investigator {
 
     private Map<String, List<SingleWord>> mapOfPatterns = new HashMap<>();
+    private static SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
     public void singleWordPatternCheck(String inputFileName, String outputFileName){
         /*General idea - build from each sentence a patterns by cutting every word (and replacing the word to $$$)
@@ -91,7 +92,6 @@ public class Investigator {
     }
 
     private static Date convertStringToDate(String dateInString) {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         Date date;
         try {
             date = formatter.parse(dateInString);
@@ -103,7 +103,6 @@ public class Investigator {
     }
 
     private static String convertDateToString(Date date) {
-        DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         String dateInString = formatter.format(date);
         return dateInString;
     }
