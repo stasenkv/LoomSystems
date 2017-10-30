@@ -1,0 +1,5 @@
+01-01-2012 19:45:00 Naomi is getting into the car
+01-01-2012 19:49:00 Naomi is eating at a restaurant
+02-01-2012 09:13:00 George is getting into the car
+03-01-2012 15:65:00 George is eating at a dinner
+04-01-2012 20:00:00 Naomi is eating at a dinner
